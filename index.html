@@ -1,0 +1,76 @@
+<html>
+   <head>
+      <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+      <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+      <style>
+         body {
+            margin: 0px;
+         }
+         .img-bg {
+            background-image: url("Domos01.jpg");
+            background-color: #a7b3be;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: fixed;
+            min-height: 100%;
+            width: 100%;
+         }
+         .page-area {
+            padding: 50px;
+         }
+         .txt-title {
+            font-family: 'Righteous', sans-serif;
+            font-size:60px;
+            color:white;
+            text-shadow: 0px 0px 180px black, 0px 0px 60px black, 0px 0px 1px black;
+         }
+         .txt-claim {
+            position:relative;
+            top:-30px;
+            font-family: 'Righteous', sans-serif;
+            font-size:36px;
+            color:white;
+            text-shadow: 0px 0px 180px black, 0px 0px 80px black, 0px 0px 1px black;
+         }
+         .btn-home {
+            font-family: 'Righteous', sans-serif;
+            padding: 14px 28px;
+            font-size:20px;
+            font-weight: bold;
+            color:#5c7d9e;
+         }
+      </style>
+      <script>
+         var images=[];
+         images[0] ='Domos01.jpg';
+         images[1] ='Domos02.jpg';
+         images[2] ='Domos03.jpg';
+         images[3] ='Domos04.jpg';
+
+         $(function () {
+            var i = 0;
+            $("#imgbg").css("background-image", "url(" + images[i] + ")");
+            setInterval(function () {
+               i++;
+               if (i == images.length) {
+                  i = 0;
+               }
+               $("#imgbg").fadeOut("slow", function () {
+                  $(this).css("background-image", "url(" + images[i] + ")");
+                  $(this).fadeIn("slow");
+               });
+            }, 6000);
+         });
+      </script>
+   </head>
+   <body>
+      <div id="imgbg" class="img-bg">
+         <div class="page-area">
+            <h1 class="txt-title">myDOMOS</h1>
+            <h3 class="txt-claim">Domotics tools</h3>
+            <button class="btn-home">Accedi</button>
+         </div>
+      </div>
+   </body>
+</html>
